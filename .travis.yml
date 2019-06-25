@@ -8,4 +8,4 @@ services:
 before_script: pip install docker-compose
 
 script:
-- docker-compose run --rm web sh -c "python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000"
+- docker-compose app --rm web sh -c "python manage.py makemigrations && python manage.py migrate && gunicorn mydjango.wsgi -b 0.0.0.0:8000"
